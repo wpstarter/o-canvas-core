@@ -2,7 +2,7 @@
 
 namespace Orchestra\Canvas\Core\Tests;
 
-use Illuminate\Support\Manager;
+use WpStarter\Support\Manager;
 use Orchestra\Canvas\Core\PresetManager;
 use Orchestra\Testbench\TestCase;
 use PHPUnit\Framework\Attributes\Test;

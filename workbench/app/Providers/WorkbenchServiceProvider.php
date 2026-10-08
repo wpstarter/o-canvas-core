@@ -2,7 +2,7 @@
 
 namespace Workbench\App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use WpStarter\Support\ServiceProvider;
 use Workbench\App\Console\CodeGeneratorCommand;
 
 class WorkbenchServiceProvider extends ServiceProvider

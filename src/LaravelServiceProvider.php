@@ -2,10 +2,10 @@
 
 namespace Orchestra\Canvas\Core;
 
-use Illuminate\Contracts\Support\DeferrableProvider;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Composer;
-use Illuminate\Support\ServiceProvider;
+use WpStarter\Contracts\Support\DeferrableProvider;
+use WpStarter\Filesystem\Filesystem;
+use WpStarter\Support\Composer;
+use WpStarter\Support\ServiceProvider;
 
 class LaravelServiceProvider extends ServiceProvider implements DeferrableProvider
 {

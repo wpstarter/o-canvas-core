@@ -2,7 +2,7 @@
 
 namespace Orchestra\Canvas\Core\Tests;
 
-use Illuminate\Filesystem\Filesystem;
+use WpStarter\Filesystem\Filesystem;
 use Orchestra\Canvas\Core\PresetManager;
 use Orchestra\Canvas\Core\Presets\Laravel;
 use Orchestra\Testbench\Concerns\WithWorkbench;
@@ -61,7 +61,7 @@ class LaravelPresetTest extends TestCase
         $this->assertSame('Tests\\', $preset->testingNamespace());
 
         $this->assertTrue($preset->hasCustomStubPath());
-        $this->assertSame('Illuminate\Foundation\Auth\User', $preset->userProviderModel());
+        $this->assertSame('WpStarter\Foundation\Auth\User', $preset->userProviderModel());
     }
 
     #[Test]

@@ -2,7 +2,7 @@
 
 namespace Orchestra\Canvas\Core\Concerns;
 
-use Illuminate\Support\Str;
+use WpStarter\Support\Str;
 
 trait TestGenerator
 {

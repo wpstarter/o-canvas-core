@@ -2,7 +2,7 @@
 
 namespace Workbench\App\Console;
 
-use Illuminate\Console\Concerns\CreatesMatchingTest;
+use WpStarter\Console\Concerns\CreatesMatchingTest;
 use Orchestra\Canvas\Core\Commands\GeneratorCommand;
 use Symfony\Component\Console\Input\InputOption;
 

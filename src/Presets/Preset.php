@@ -2,7 +2,7 @@
 
 namespace Orchestra\Canvas\Core\Presets;
 
-use Illuminate\Contracts\Foundation\Application;
+use WpStarter\Contracts\Foundation\Application;
 use LogicException;
 
 abstract class Preset
@@ -33,7 +33,7 @@ abstract class Preset
      */
     public function userProviderModel(?string $guard = null): ?string
     {
-        /** @var \Illuminate\Contracts\Config\Repository $config */
+        /** @var \WpStarter\Contracts\Config\Repository $config */
         $config = $this->app->make('config');
 
         $guard = $guard ?: $config->get('auth.defaults.guard');

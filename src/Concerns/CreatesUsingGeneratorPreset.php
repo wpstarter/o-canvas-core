@@ -2,7 +2,7 @@
 
 namespace Orchestra\Canvas\Core\Concerns;
 
-use Illuminate\Support\Str;
+use WpStarter\Support\Str;
 use Orchestra\Canvas\Core\PresetManager;
 use Orchestra\Canvas\Core\Presets\Preset;
 use Symfony\Component\Console\Input\InputOption;

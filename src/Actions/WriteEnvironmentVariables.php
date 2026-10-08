@@ -2,8 +2,8 @@
 
 namespace Orchestra\Canvas\Core\Actions;
 
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
-use Illuminate\Filesystem\Filesystem;
+use WpStarter\Contracts\Filesystem\FileNotFoundException;
+use WpStarter\Filesystem\Filesystem;
 use Orchestra\Sidekick\Env;
 
 /**
@@ -25,7 +25,7 @@ class WriteEnvironmentVariables
      * @param  array<string, mixed>  $variables
      *
      * @throws \RuntimeException
-     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     * @throws \WpStarter\Contracts\Filesystem\FileNotFoundException
      */
     public function handle(array $variables, bool $overwrite = false): void
     {
@@ -43,7 +43,7 @@ class WriteEnvironmentVariables
      *
      * @param  array<string, mixed>  $variables
      *
-     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     * @throws \WpStarter\Contracts\Filesystem\FileNotFoundException
      */
     protected function writeVariables(array $variables, string $filename, bool $overwrite = false): void
     {

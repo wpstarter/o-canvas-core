@@ -2,8 +2,8 @@
 
 namespace Orchestra\Canvas\Core\Tests\Actions;
 
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Composer;
+use WpStarter\Filesystem\Filesystem;
+use WpStarter\Support\Composer;
 use Mockery as m;
 use Orchestra\Canvas\Core\Actions\DumpComposerAutoloads;
 use PHPUnit\Framework\Attributes\Group;

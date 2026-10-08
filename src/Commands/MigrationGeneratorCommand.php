@@ -2,7 +2,7 @@
 
 namespace Orchestra\Canvas\Core\Commands;
 
-use Illuminate\Console\MigrationGeneratorCommand as Command;
+use WpStarter\Console\MigrationGeneratorCommand as Command;
 use Orchestra\Canvas\Core\Concerns\MigrationGenerator;
 
 /**

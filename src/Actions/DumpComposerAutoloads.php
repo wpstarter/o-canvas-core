@@ -19,7 +19,7 @@ class DumpComposerAutoloads
      */
     public function handle(): void
     {
-        app('canvas.composer')
+        ws_app('canvas.composer')
             ->setWorkingPath($this->workingPath)
             ->dumpAutoloads();
     }

@@ -2,7 +2,7 @@
 
 namespace Orchestra\Canvas\Core;
 
-use Illuminate\Support\Manager;
+use WpStarter\Support\Manager;
 
 class PresetManager extends Manager
 {

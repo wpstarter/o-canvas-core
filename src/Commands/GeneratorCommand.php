@@ -2,7 +2,7 @@
 
 namespace Orchestra\Canvas\Core\Commands;
 
-use Illuminate\Console\GeneratorCommand as Command;
+use WpStarter\Console\GeneratorCommand as Command;
 use Orchestra\Canvas\Core\Concerns;
 use Orchestra\Canvas\Core\Contracts\GeneratesCode;
 

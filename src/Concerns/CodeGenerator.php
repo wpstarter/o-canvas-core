@@ -2,8 +2,8 @@
 
 namespace Orchestra\Canvas\Core\Concerns;
 
-use Illuminate\Console\Concerns\CreatesMatchingTest;
-use Illuminate\Support\Str;
+use WpStarter\Console\Concerns\CreatesMatchingTest;
+use WpStarter\Support\Str;
 
 trait CodeGenerator
 {

@@ -2,15 +2,15 @@
 
 namespace Orchestra\Canvas\Core\Tests\Concerns;
 
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Filesystem\Filesystem;
+use WpStarter\Contracts\Support\Arrayable;
+use WpStarter\Filesystem\Filesystem;
 use Orchestra\Canvas\Core\Concerns\UsesGeneratorOverrides;
 use Orchestra\Canvas\Core\PresetManager;
 use Orchestra\Canvas\Core\Presets\Preset;
 use Orchestra\Testbench\TestCase;
 use PHPUnit\Framework\Attributes\Test;
 
-use function Illuminate\Filesystem\join_paths;
+use function WpStarter\Filesystem\join_paths;
 
 class UsesGeneratorOverridesTest extends TestCase
 {
@@ -81,6 +81,6 @@ class UsesGeneratorOverridesTestStub implements Arrayable
      */
     protected function generatorPreset(): Preset
     {
-        return app(PresetManager::class)->driver('laravel');
+        return ws_app(PresetManager::class)->driver('laravel');
     }
 }

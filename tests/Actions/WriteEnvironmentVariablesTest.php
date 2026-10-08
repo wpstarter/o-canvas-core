@@ -2,8 +2,8 @@
 
 namespace Orchestra\Canvas\Core\Tests\Actions;
 
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
-use Illuminate\Filesystem\Filesystem;
+use WpStarter\Contracts\Filesystem\FileNotFoundException;
+use WpStarter\Filesystem\Filesystem;
 use Orchestra\Canvas\Core\Actions\WriteEnvironmentVariables;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestWith;
