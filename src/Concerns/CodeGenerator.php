@@ -45,11 +45,11 @@ trait CodeGenerator
             $path, $this->sortImports($this->generatingCode($this->buildClass($className), $className))
         );
 
-        if (\in_array(CreatesMatchingTest::class, class_uses_recursive($this))) {
+        if (\in_array(CreatesMatchingTest::class, ws_class_uses_recursive($this))) {
             $this->handleTestCreationUsingCanvas($path);
         }
 
-        return tap($this->codeHasBeenGenerated($className, $path), function ($exitCode) use ($className, $path) {
+        return ws_tap($this->codeHasBeenGenerated($className, $path), function ($exitCode) use ($className, $path) {
             $this->afterCodeHasBeenGenerated($className, $path);
         });
     }

@@ -73,7 +73,7 @@ trait UsesGeneratorOverrides
 
         $modelPath = is_dir(join_paths($sourcePath, 'Models')) ? join_paths($sourcePath, 'Models') : $sourcePath;
 
-        return collect((new Finder)->files()->depth(0)->in($modelPath))
+        return ws_collect((new Finder)->files()->depth(0)->in($modelPath))
             ->map(fn ($file) => $file->getBasename('.php'))
             ->sort()
             ->values()
@@ -105,7 +105,7 @@ trait UsesGeneratorOverrides
             return [];
         }
 
-        return collect((new Finder)->files()->depth(0)->in($eventPath))
+        return ws_collect((new Finder)->files()->depth(0)->in($eventPath))
             ->map(fn ($file) => $file->getBasename('.php'))
             ->sort()
             ->values()

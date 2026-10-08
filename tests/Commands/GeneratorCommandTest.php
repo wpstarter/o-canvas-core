@@ -76,7 +76,7 @@ class GeneratorCommandTest extends TestCase
     #[Test]
     public function it_can_generate_class_file_when_file_already_exist_using_force_option()
     {
-        file_put_contents(base_path('app/Value/Foo.php'), '<?php '.PHP_EOL);
+        file_put_contents(ws_base_path('app/Value/Foo.php'), '<?php '.PHP_EOL);
 
         $this->artisan('make:code', ['name' => 'Value/Foo', '--force' => true])
             ->assertSuccessful();
@@ -99,7 +99,7 @@ class GeneratorCommandTest extends TestCase
     #[RequiresOperatingSystem('Linux|DAR')]
     public function it_cannot_generate_class_file_when_file_already_exist()
     {
-        file_put_contents(base_path(join_paths('app', 'Value', 'Foo.php')), '<?php '.PHP_EOL);
+        file_put_contents(ws_base_path(join_paths('app', 'Value', 'Foo.php')), '<?php '.PHP_EOL);
 
         $this->artisan('make:code', ['name' => 'Value/Foo'])
             ->expectsOutputToContain('class [app/Value/Foo.php] already exists!')
@@ -110,7 +110,7 @@ class GeneratorCommandTest extends TestCase
     #[RequiresOperatingSystem('Windows')]
     public function it_cannot_generate_class_file_when_file_already_exist_on_windows()
     {
-        file_put_contents(base_path(join_paths('app', 'Value', 'Foo.php')), '<?php '.PHP_EOL);
+        file_put_contents(ws_base_path(join_paths('app', 'Value', 'Foo.php')), '<?php '.PHP_EOL);
 
         $this->artisan('make:code', ['name' => 'Value/Foo'])
             ->expectsOutputToContain('class [app\Value\Foo.php] already exists!')

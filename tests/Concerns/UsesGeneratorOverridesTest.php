@@ -21,13 +21,13 @@ class UsesGeneratorOverridesTest extends TestCase
         $filesystem = new Filesystem;
 
         $this->afterApplicationCreated(static function () use ($filesystem) {
-            $filesystem->ensureDirectoryExists(join_paths(base_path('app'), 'Events'));
-            $filesystem->ensureDirectoryExists(join_paths(base_path('app'), 'Models'));
+            $filesystem->ensureDirectoryExists(join_paths(ws_base_path('app'), 'Events'));
+            $filesystem->ensureDirectoryExists(join_paths(ws_base_path('app'), 'Models'));
         });
 
         $this->beforeApplicationDestroyed(static function () use ($filesystem) {
-            $filesystem->deleteDirectory(join_paths(base_path('app'), 'Events'));
-            $filesystem->deleteDirectory(join_paths(base_path('app'), 'Models'));
+            $filesystem->deleteDirectory(join_paths(ws_base_path('app'), 'Events'));
+            $filesystem->deleteDirectory(join_paths(ws_base_path('app'), 'Models'));
         });
 
         parent::setUp();
@@ -40,7 +40,7 @@ class UsesGeneratorOverridesTest extends TestCase
 
         $this->assertSame([
             'user-model' => 'App\Models\User',
-            'welcome-view' => join_paths(base_path('resources'), 'views', 'welcome.blade.php'),
+            'welcome-view' => join_paths(ws_base_path('resources'), 'views', 'welcome.blade.php'),
             'possible-models' => [],
             'possible-events' => [],
         ], $stub->toArray());
