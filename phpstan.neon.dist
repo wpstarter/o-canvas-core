@@ -10,7 +10,9 @@ parameters:
   level: 8
 
   ignoreErrors:
-    - identifier: function.alreadyNarrowedType
+    -
+      identifier: function.alreadyNarrowedType
+      reportUnmatched: false
     - identifier: missingType.iterableValue
     - identifier: trait.unused
 
