@@ -1,0 +1,45 @@
+name: coveralls
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: "ubuntu-latest"
+    continue-on-error: false
+    strategy:
+      matrix:
+        php: [8.3]
+
+    name: PHP:${{ matrix.php }} Code Coverage
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, sqlite3, pdo_sqlite, bcmath, fileinfo
+          coverage: xdebug
+
+      - name: Set package version
+        run: composer config version "10.x-dev"
+
+      - name: Install dependencies
+        uses: "ramsey/composer-install@v3"
+        with:
+          dependency-versions: "highest"
+          composer-options: "--prefer-dist --no-cache"
+
+      - name: Execute tests
+        run: vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+      - name: Upload coverage results to Coveralls
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          composer global require php-coveralls/php-coveralls
+          php-coveralls --coverage_clover=build/logs/clover.xml -v
